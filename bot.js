@@ -13,9 +13,8 @@ client.user.setGame(` !تقديم `,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 
-
 client.on("message", message => {
-            if(message.content.startsWith("!تقديم")) {
+            if(message.content.startsWith("#تقديم")) {
         if(!message.channel.guild) return;
                 if(message.author.bot) return;
         let channel = message.guild.channels.find("name", "✽-التقديمات")
@@ -92,26 +91,25 @@ client.on("message", message => {
 }
         });
 
-        client.on('message', message=>{///n3k4a is one  
-            if(message.content.startsWith("#روم1")) {
-		    if(!message.channel.guild) return;///n3k4a is one  
+        client.on('message', message=>{
+            if(message.content.startsWith("!room1")) {
+            if(!message.channel.guild) return;
                 if(message.author.bot) return;
                 if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply("**تحتاج الى `MANAGE_CHANNELS`**");
-                message.guild.createChannel("✽-التقديمات", "text").then(c =>{
-                    c.overwritePermissions(message.guild.id, {///n3k4a is one  
+                message.guild.createChannel("التقديمات", "text").then(c =>{
+                    c.overwritePermissions(message.guild.id, {
                         SEND_MESSAGES: false
-
-                          })///n3k4a is one  
+ 
+                          })
                 })
-    message.channel.send("**✅ تم انشاء روم التقديمات بنجاح**")///n3k4a is one  
+    message.channel.send("**✅ تم انشاء روم التقديمات بنجاح**")
             }
             })
-
     client.on('message',async message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
   let mySupport = message.guild.roles.find('name',role);
-  if(message.content.startsWith("!قبول")) {
+  if(message.content.startsWith("#قبول")) {
     let acRoom = message.guild.channels.find('name', '✽-القبول-الرفض');
     if(!acRoom) return message.reply("لا يوجد ✽-القبول-الرفض");
     if(acRoom) {
@@ -129,7 +127,7 @@ client.on("message", message => {
 });
 client.on('message',async message => {
   let mention = message.mentions.members.first();
-  if(message.content.startsWith("!رفض")) {
+  if(message.content.startsWith("#رفض")) {
   if(!message.channel.guild) return;
   let acRoom = message.guild.channels.find('name', '✽-القبول-الرفض');
   if(!acRoom) return message.reply("لا يوجد ✽-القبول-الرفض");
