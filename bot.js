@@ -36,7 +36,7 @@ client.on("message", message => {
                           var age = m2.content;
                           m2.delete()
                           message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                            m.edit( message.member + ', **هل تتفاعل في الرتبه🎙**' )
+                            m.edit( message.member + ', ** هي لغه البرمجة الخاصه بك ؟ **' )
                             setTimeout(() => {
                               m.delete()
                             }, 10000);
@@ -54,7 +54,7 @@ client.on("message", message => {
                                       var ask2 = m4.content;
                                       m4.delete();
                                       message.channel.send( message.member + ', **:timer:**').then( (m) =>{
-                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ وما هي الرتبه العوزها 🤔**' )
+                                        m.edit( message.member + ', **لماذا يجب علينا ان نقبلك ؟ اعطنا كودالشخص مسويه ؟🤔**' )
                                         m.channel.awaitMessages( m1 => m1.author == message.author,{ maxMatches: 1, time: 60*1000 } ).then ( (m5) => {
                                             m5 = m5.first();
                                             var ask3 = m5.content;
@@ -66,9 +66,9 @@ client.on("message", message => {
                         .setTitle(`**تقديم على رتبه** [__**${message.guild.name}**__]`)
                         .addField('**`الاسم`**', `${name}` , true)
                         .addField('**`العمر`**', `${age}` , true)
-                        .addField('**`هل سيتفاعل ؟`**',`${ask}`)
+                        .addField('**`للغه برمجه`**',`${ask}`)
                         .addField('**`هل سيحترم القوانين ؟`**',`${ask2}`)
-                        .addField('**`لماذا يجب علينا قبوله|وماهى الرتبه العوزها؟`**',`${ask3}`)
+                        .addField('**`لماذ علينا ان نقبلك`**',`${ask3}`)
                         .setFooter(message.author.username,'https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif')
                         channel.send(embed)
                         }, 2500);
