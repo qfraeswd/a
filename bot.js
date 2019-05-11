@@ -105,6 +105,7 @@ client.on("message", message => {
     message.channel.send("**✅ تم انشاء روم التقديمات بنجاح**")
             }
             })
+
     client.on('message',async message => {
   let mention = message.mentions.members.first();
   let role = message.content.split(" ").slice(2).join(" ");
@@ -125,6 +126,7 @@ client.on("message", message => {
   }
 }
 });
+
 client.on('message',async message => {
   let mention = message.mentions.members.first();
   if(message.content.startsWith("!رفض")) {
@@ -137,6 +139,7 @@ client.on('message',async message => {
   acRoom.send(`**${mention} تم رفضك للاسف**`)
   }
 });
+
           client.on('message', message=>{
             if(message.content.startsWith("!room2")) {
          if(!message.channel.guild) return;
